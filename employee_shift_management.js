@@ -11,3 +11,18 @@ const employees = [
     { name: 'Louis', shifts: [{ day: 'Friday', hours: 8 }] }
     
 ];
+
+// Results:
+console.log(employees);
+
+// Task 2: Create a Function to Display Employee Shift Details
+
+function displayEmployeeShifts(employee) {
+    console.log(`Employee Name: ${employee.name}`);
+    employee.shifts.forEach(shift => {
+        console.log(`Day: ${shift.day}, Hours Worked: ${shift.hours}`);
+    });
+}
+
+// Example usage:
+employees.forEach(displayEmployeeShifts);
