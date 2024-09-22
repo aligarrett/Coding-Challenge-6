@@ -57,3 +57,24 @@ assignShift(employees, 'Claudia', 'Tuesday', 5); // Should successfully assign t
 
 // Check the updated shifts
 displayEmployeeShifts(employees.find(emp => emp.name === 'Claudia'));
+
+// Task 4: Create a Function to Calculate Total Hours Worked
+
+function calculateTotalHours(employees, employeeName) {
+    // Find the employee by name
+    const employee = employees.find(emp => emp.name === employeeName);
+
+    // If employee is found, calculate total hours
+    if (employee) {
+        const totalHours = employee.shifts.reduce((total, shift) => total + shift.hours, 0);
+        console.log(`Total hours worked by ${employeeName}: ${totalHours}`);
+        return totalHours; // Return the total hours
+    } else {
+        console.log(`Employee ${employeeName} not found.`);
+        return 0; // Return 0 if the employee is not found
+    }
+}
+
+// Example usage
+calculateTotalHours(employees, 'Claudia'); // Should display total hours for Claudia
+calculateTotalHours(employees, 'Lestat'); // Should display total hours for Lestat
